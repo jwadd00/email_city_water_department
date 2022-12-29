@@ -6,15 +6,17 @@ on:
     branches:
       - main
 
-jobs:
-    send_email:
-        steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-python@v4
-             with:
-              python-version: '3.10'
-          - run: pip install -r requirements.txt
-          - run: python main.py
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  
+    - name: Install Dependencies
+      run: pip install -r requirements.txt
+    - name: Run python script
+      run: python main.py
 
 env:
             GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
