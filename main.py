@@ -23,7 +23,7 @@ address = os.environ['HOME_ADDRESS'] #shhhh its a secret
 # to / from
 email_sender = os.environ['GMAIL_ADDRESS'] #shhhh its a secret
 email_password = os.environ['GOOGLE_APP_PWD'] #shhhh its a secret
-email_receiver = 'jwadd00@gmail.com' # send to
+email_receiver = 'utilitycenter@fortsmithar.gov' # send to
 
 # email content
 subject = 'Meter Issue: Ongoing for ' + str(n_days) + ' days'
